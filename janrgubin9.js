@@ -20,7 +20,7 @@ function oddElevator(floorNumber) {
     type : "list",
     name : "selectFloor",
     message : "층을 고르세요",
-    choices : ['지하1층','1층','2층','3층','4층','5층','6층','7층','8층','9층','10층']
+    choices : ['지하1층',1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
   }]);
   test.then((answer)=> {
     console.log(answer);
@@ -29,7 +29,7 @@ function oddElevator(floorNumber) {
     console.log(selectFloor)
     // const parse = JSON.parse(answer);
     // console.log(parse)
-    if(selectFloor === "f1" || selectFloor === 10 || selectFloor % 2 !== 0) {
+    if(selectFloor === "지하1층" || selectFloor === 10 || selectFloor % 2 !== 0) {
       console.log("이용 가능")
     } else {
       console.log("이용 불가")
