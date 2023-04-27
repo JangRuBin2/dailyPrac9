@@ -1,5 +1,5 @@
 import inquirer from "inquirer";
-console.log(inquirer)
+// console.log(inquirer)
 // 비즈니스 로직
 //  % 나머지 값을 내는 연산자 "%"
 // 7%2 = 1
@@ -12,22 +12,22 @@ console.log(inquirer)
 // 오라클 빌딩에는 두개의 엘레베이터가 있다.
 // inquirer.prompt(["하이"])
 // !질문을 객체 배열 형태로 받아서, 사용자에게 질문을 하고 그에 대한 답변을 Promise로 반환
-// function oddElevator(floorNumber) {
-//   inquirer.prompt(
-//     [{  type : "input",
-//         name : '엘레베이터 탑승자',
-//         message : "층을 입력하세요"
-//     }])
-//         .then((answer) => {
-//         console.log('안내 : ', answer)
-//   })    
-//   if(floorNumber % 2 === 0 ) {
-//     console.log("여긴 홀수층만 운행함니다 내리세연")
-//   } else if (floorNumber % 2 !== 0) {
-//     console.log("홀수네? 올라 타세욘")
-//   }
+function oddElevator(floorNumber) {
+     
+  if(floorNumber % 2 === 0 ) {
+    console.log("여긴 홀수층만 운행함니다 내리세연");
+  } else if (floorNumber % 2 !== 0 || floorNumber === 10) {
+    console.log("홀수네? 올라 타세욘");
+    inquirer.prompt(
+      [{  type : "input",
+          name : '선택한 층은',
+          message : "층을 입력하세요"
+      }]).then((answer) => {
+          console.log('안내 : ', answer)
+    })
+  }
   
-// }
+}
 
 
 function evenElevator(floorNumber) {
@@ -37,8 +37,8 @@ function evenElevator(floorNumber) {
     console.log("짝수네? 올라 타세욘")
   }
 }
-oddElevator(2);
-evenElevator(1);
+oddElevator(10);
+// evenElevator(1);
 
 // 홀수 전용 짝수 전용 엘리베이터 두개가 마련 되어있지만, 예외가 발생함
 
