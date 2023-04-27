@@ -16,17 +16,25 @@ import inquirer from "inquirer";
 function oddElevator(floorNumber) {
   // 홀수층이지만 이 둘은 가능함
   // const canUse = "";
+  const test = inquirer.prompt([{
+    type : "input",
+    name : "selectFloor",
+    message : "층을 입력하세요"
+  }]);
+  test.then((answer)=> {
+    console.log(answer);
+    const selectFloor = answer.selectFloor
+    console.log(selectFloor)
+    // const parse = JSON.parse(answer);
+    // console.log(parse)
+  })
   let result;
-  if(floorNumber === "f1" || floorNumber === 10) {
+  if(floorNumber === "f1" || floorNumber === 10 || floorNumber % 2 !== 0) {
     result = true;
-    // console.log(result)
-  } else if (floorNumber % 2 !== 0) {
-    result = true;
-    // console.log(result)
-    
+    console.log(result)
+  } else {
+    console.log("이용 불가")
   }
-
-
   return result;
 }
 // inquirer.prompt(
