@@ -12,27 +12,22 @@ import inquirer from "inquirer";
 // 오라클 빌딩에는 두개의 엘레베이터가 있다.
 // inquirer.prompt(["하이"])
 // !질문을 객체 배열 형태로 받아서, 사용자에게 질문을 하고 그에 대한 답변을 Promise로 반환
-function checkFloor() {
-   return console.log("하이")
-}
-function oddElevator(floorNumber, checkFloor) {
+
+function oddElevator(floorNumber) {
   // 홀수층이지만 이 둘은 가능함
   // const canUse = "";
- 
   let result;
   if(floorNumber === "f1" || floorNumber === 10) {
     result = true;
     // console.log(result)
-    return result;
   } else if (floorNumber % 2 !== 0) {
     result = true;
     // console.log(result)
-    checkFloor();
-    return result;
+    
   }
- 
 
-  
+
+  return result;
 }
 // inquirer.prompt(
 //   [{  type : "input",
@@ -49,7 +44,7 @@ function evenElevator(floorNumber) {
     console.log("짝수네? 올라 타세욘")
   }
 }
-oddElevator(3, checkFloor);
+oddElevator("f1");
 // evenElevator(1);
 
 // 홀수 전용 짝수 전용 엘리베이터 두개가 마련 되어있지만, 예외가 발생함
