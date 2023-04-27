@@ -1,3 +1,4 @@
+import inquirer from "inquirer";
 // 비즈니스 로직
 //  % 나머지 값을 내는 연산자 "%"
 // 7%2 = 1
@@ -8,14 +9,29 @@
 // 홀수 odd number, 짝수 even number를 구분하는 근거로
 // 2로 나눈 값의 '몫'을 제외한 나머지가 0이면 짝수, 아니면 홀수라는 결론이 나옴
 // 오라클 빌딩에는 두개의 엘레베이터가 있다.
-
+// inquirer.prompt(["하이"])
 function oddElevator(floorNumber) {
-
+  // inquirer.prompt(["엘리베이터가 열립니다"]).then((answer) => {
+  //   console.log('안내 : ', answer)
+  // })
+  if(floorNumber % 2 === 0 ) {
+    console.log("여긴 홀수층만 운행함니다 내리세연")
+  } else if (floorNumber % 2 !== 0) {
+    console.log("홀수네? 올라 타세욘")
+  }
+  
 }
+
 
 function evenElevator(floorNumber) {
-
+  if(floorNumber % 2 !== 0 ) {
+    console.log("여긴 짝수층만 운행함니다 내리세연")
+  } else if(floorNumber % 2 === 0 ) {
+    console.log("짝수네? 올라 타세욘")
+  }
 }
+oddElevator(2);
+evenElevator(1);
 
 // 홀수 전용 짝수 전용 엘리베이터 두개가 마련 되어있지만, 예외가 발생함
 
