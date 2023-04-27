@@ -17,9 +17,10 @@ function oddElevator(floorNumber) {
   // 홀수층이지만 이 둘은 가능함
   // const canUse = "";
   const test = inquirer.prompt([{
-    type : "input",
+    type : "list",
     name : "selectFloor",
-    message : "층을 입력하세요"
+    message : "층을 고르세요",
+    choices : ['지하1층','1층','2층','3층','4층','5층','6층','7층','8층','9층','10층']
   }]);
   test.then((answer)=> {
     console.log(answer);
