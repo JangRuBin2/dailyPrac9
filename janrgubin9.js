@@ -24,18 +24,21 @@ function oddElevator(floorNumber) {
   test.then((answer)=> {
     console.log(answer);
     const selectFloor = answer.selectFloor
+    // 입력받은 층 확인
     console.log(selectFloor)
     // const parse = JSON.parse(answer);
     // console.log(parse)
-  })
-  let result;
-  if(floorNumber === "f1" || floorNumber === 10 || floorNumber % 2 !== 0) {
-    result = true;
-    console.log(result)
-  } else {
-    console.log("이용 불가")
-  }
-  return result;
+    if(selectFloor === "f1" || selectFloor === 10 || selectFloor % 2 !== 0) {
+      console.log("이용 가능")
+    } else {
+      console.log("이용 불가")
+    }
+    // return selectFloor
+  });
+
+ 
+ 
+  
 }
 // inquirer.prompt(
 //   [{  type : "input",
@@ -52,7 +55,7 @@ function evenElevator(floorNumber) {
     console.log("짝수네? 올라 타세욘")
   }
 }
-oddElevator("f1");
+oddElevator();
 // evenElevator(1);
 
 // 홀수 전용 짝수 전용 엘리베이터 두개가 마련 되어있지만, 예외가 발생함
@@ -70,3 +73,7 @@ oddElevator("f1");
 
 // 위의 설명을 종합하여 orderlist(순서가 있는 목록)으로
 // 예상되는 절차를 술어로 작성하시오
+
+// 함수에서도 몇층으로 갈지 입력하는 것이 이해가 안됨
+// ! 지하 1층부터 10층까지의 숫자를 입력할 수 있는 인터페이스를 제작한다. 라고 했는데 함수에 층 입력하는게 이해안됨
+//? -> .then()메소드 내에서 모든 데이터 처리하면 될 것으로 판단 됨
